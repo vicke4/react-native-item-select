@@ -182,6 +182,3 @@ To make `ReactNativeItemSelect` more customizable styling & implementation of te
 
 NOTE: Search implementation is not part of the GIF shown above. Search feature was added after the creation of demo GIF.
 
-## LICENSE
-
-MIT
