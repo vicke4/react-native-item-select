@@ -18,7 +18,9 @@ const positionMapping = {
     },
 };
 
-const CheckMark = ({ customTickTxt, textStyle, tickPos }) => {
+const CheckMark = ({
+    customTickTxt, textStyle, tickPos, tickComponent,
+}) => {
     const { tickTxt } = styles;
     const viewStyle = {
         position: 'absolute', justifyContent: 'center', alignItems: 'center', zIndex: 1,
@@ -27,9 +29,13 @@ const CheckMark = ({ customTickTxt, textStyle, tickPos }) => {
 
     return (
         <View style={{ ...viewStyle, ...positionMapping[tickPos] }}>
-            <Text style={[tickTxt, textStyle]}>
-                {textContent}
-            </Text>
+            {
+                tickComponent || (
+                    <Text style={[tickTxt, textStyle]}>
+                        {textContent}
+                    </Text>
+                )
+            }
         </View>
     );
 };
@@ -52,7 +58,7 @@ class Item extends PureComponent {
     render() {
         const {
             extraItemHighlighProps, item, itemComponent, index, tickPosition,
-            tickStyle, tickTxt, multiselect, styles: customStyles, selected,
+            tickStyle, tickTxt, multiselect, styles: customStyles, selected, tickComponent,
         } = this.props;
         const renderFunc = itemComponent || (() => {});
         const {
@@ -63,7 +69,7 @@ class Item extends PureComponent {
         const highlightStyle = [itemTouchableHighlight];
         const tickPos = tickPosition || (tickStyle === 'overlayCheck' || multiselect ? 'middle' : 'topRight');
         const tickProps = {
-            textStyle, customTickTxt: tickTxt, tickPos, tickStyle,
+            textStyle, customTickTxt: tickTxt, tickPos, tickStyle, tickComponent,
         };
 
         highlightStyle.push({ borderColor }, { marginBottom: 10 }, itemBoxHighlight);

@@ -245,6 +245,7 @@ ReactNativeItemSelect.propTypes = {
         PropTypes.string,
         PropTypes.instanceOf(Object),
     ]),
+    tickComponent: PropTypes.node,
 };
 
 ReactNativeItemSelect.defaultProps = {
@@ -264,6 +265,7 @@ ReactNativeItemSelect.defaultProps = {
     tickPosition: null,
     tickStyle: null,
     tickTxt: <Text>&#x2713;</Text>,
+    tickComponent: null,
 };
 
 export default ReactNativeItemSelect;
