@@ -1,6 +1,6 @@
 {
   "name": "react-native-item-select",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "List or Grid viewed item(s) picker for React Native",
   "main": "dist/index.js",
   "scripts": {

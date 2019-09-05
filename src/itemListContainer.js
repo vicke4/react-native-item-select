@@ -91,7 +91,7 @@ class ReactNativeItemSelect extends Component {
         const newState = { ...this.state };
         const { indexMapping, selectedItem } = newState;
         let tempSelected = selectedItem;
-        const { multiselect, maxSelectAlertTxt, maxSelectCount } = this.props;
+        const { multiselect, maxSelectAlertTxt, maxSelectCount, onSelectedItemBtn } = this.props;
 
         if (multiselect && selectedItem.length === maxSelectCount && !selected) {
             return Alert.alert('', maxSelectAlertTxt || `You can't select more than ${maxSelectCount} items`);
@@ -109,6 +109,8 @@ class ReactNativeItemSelect extends Component {
         }
 
         newState.selectedItem = tempSelected;
+
+        if (onSelectedItemBtn) onSelectedItemBtn(tempSelected);
 
         return this.setState(newState);
     }
@@ -203,6 +205,7 @@ class ReactNativeItemSelect extends Component {
 
 ReactNativeItemSelect.propTypes = {
     data: PropTypes.instanceOf(Array).isRequired,
+    onSelectedItemBtn: PropTypes.func,
     itemComponent: PropTypes.func.isRequired,
     onSubmit: PropTypes.func.isRequired,
     countPerRow: PropTypes.number,
