@@ -1,16 +1,11 @@
 {
   "name": "react-native-item-select",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "List or Grid viewed item(s) picker for React Native",
-  "main": "dist/index.js",
+  "main": "index.js",
   "scripts": {
-    "test": "eslint index.js {bin,lib}/*.js",
-    "build": "mkdir -p dist && npx babel ./{,src}/*.js --out-dir ./dist/",
-    "dev": "mkdir -p dist && npx babel --watch ./{,src}/*.js --out-dir ./dist/"
+    "test": "eslint index.js {bin,lib}/*.js"
   },
-  "files": [
-    "dist"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vicke4/react-native-item-select.git"
