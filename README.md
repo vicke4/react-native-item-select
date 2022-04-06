@@ -1,6 +1,6 @@
 # React Native Item Select
 
-Sometimes selecting items from dropdowns or checkboxes just don't cut it. You may need a fancy grid item picker. May be this highly customizable List Grid item(s) picker for React Native is what you're looking for.
+Sometimes selecting items from dropdowns or checkboxes just doesn't cut it. You may need a fancy grid item picker. Maybe this highly customizable List Grid item(s) picker for React Native is what you're looking for.
 
 <br />
 <p align="middle">
